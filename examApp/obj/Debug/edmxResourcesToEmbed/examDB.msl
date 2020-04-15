@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Exam_System_DBModelStoreContainer" CdmEntityContainer="Exam_System_DBEntities">
+    <EntitySetMapping Name="Tbl_Admin">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Admin">
+        <MappingFragment StoreEntitySet="Tbl_Admin">
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Answer">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Answer">
+        <MappingFragment StoreEntitySet="Tbl_Answer">
+          <ScalarProperty Name="Answer_ID" ColumnName="Answer_ID" />
+          <ScalarProperty Name="Answer_Ar" ColumnName="Answer_Ar" />
+          <ScalarProperty Name="Answer_En" ColumnName="Answer_En" />
+          <ScalarProperty Name="Correct_Answer" ColumnName="Correct_Answer" />
+          <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_chapter">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_chapter">
+        <MappingFragment StoreEntitySet="Tbl_chapter">
+          <ScalarProperty Name="Chapter_ID" ColumnName="Chapter_ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_department">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_department">
+        <MappingFragment StoreEntitySet="Tbl_department">
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Level_ID" ColumnName="Level_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Level">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Level">
+        <MappingFragment StoreEntitySet="Tbl_Level">
+          <ScalarProperty Name="Level_ID" ColumnName="Level_ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_Er" ColumnName="Name_Er" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Prof">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Prof">
+        <MappingFragment StoreEntitySet="Tbl_Prof">
+          <ScalarProperty Name="Prof_ID" ColumnName="Prof_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Approval" ColumnName="Approval" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Question">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Question">
+        <MappingFragment StoreEntitySet="Tbl_Question">
+          <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+          <ScalarProperty Name="Question_Ar" ColumnName="Question_Ar" />
+          <ScalarProperty Name="Question_En" ColumnName="Question_En" />
+          <ScalarProperty Name="Chapter_ID" ColumnName="Chapter_ID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Question_Level" ColumnName="Question_Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Result">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Result">
+        <MappingFragment StoreEntitySet="Tbl_Result">
+          <ScalarProperty Name="Result_ID" ColumnName="Result_ID" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
+          <ScalarProperty Name="Chapter_ID" ColumnName="Chapter_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Student">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Student">
+        <MappingFragment StoreEntitySet="Tbl_Student">
+          <ScalarProperty Name="Approval" ColumnName="Approval" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Level_ID" ColumnName="Level_ID" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Subject">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_Subject">
+        <MappingFragment StoreEntitySet="Tbl_Subject">
+          <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_Er" ColumnName="Name_Er" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Prof_ID" ColumnName="Prof_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ExamStructure">
+      <EntityTypeMapping TypeName="Exam_System_DBModel.Tbl_ExamStructure">
+        <MappingFragment StoreEntitySet="Tbl_ExamStructure">
+          <ScalarProperty Name="Chapter_ID" ColumnName="Chapter_ID" />
+          <ScalarProperty Name="Num_Ques_TF_C" ColumnName="Num_Ques_TF_C" />
+          <ScalarProperty Name="Num_Ques_TF_B" ColumnName="Num_Ques_TF_B" />
+          <ScalarProperty Name="Num_Ques_TF_A" ColumnName="Num_Ques_TF_A" />
+          <ScalarProperty Name="Num_Ques_Mcq_C" ColumnName="Num_Ques_Mcq_C" />
+          <ScalarProperty Name="Num_Ques_Mcq_B" ColumnName="Num_Ques_Mcq_B" />
+          <ScalarProperty Name="Num_Ques_Mcq_A" ColumnName="Num_Ques_Mcq_A" />
+          <ScalarProperty Name="Exam_ID" ColumnName="Exam_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

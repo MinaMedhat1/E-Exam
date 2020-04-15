@@ -1,0 +1,437 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FE865ED-6D7B-4615-A0F4-819510AAACA1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>examApp</RootNamespace>
+    <AssemblyName>examApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddDepartment.aspx" />
+    <Content Include="AddLevel.aspx" />
+    <Content Include="AddSubject.aspx" />
+    <Content Include="AdminHome.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="confirmProf.aspx" />
+    <Content Include="confirmStudent.aspx" />
+    <Content Include="css\css.css" />
+    <Content Include="css\navstyle.css" />
+    <Content Include="css\StyleEditprof.css" />
+    <Content Include="css\StyleSheet.css" />
+    <Content Include="EditDepartment.aspx" />
+    <Content Include="editProf.aspx" />
+    <Content Include="EditProffesor.aspx" />
+    <Content Include="EditStudent.aspx" />
+    <Content Include="EditSubject.aspx" />
+    <Content Include="examDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>examDB.Context.cs</LastGenOutput>
+      <DependentUpon>examDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="examDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>examDB.edmx</DependentUpon>
+      <LastGenOutput>examDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Home.aspx" />
+    <Content Include="js\script.js" />
+    <Content Include="img\11.jpg" />
+    <Content Include="img\arm-down-left.png" />
+    <Content Include="img\arm-down-right.png" />
+    <Content Include="img\arm-up-left.png" />
+    <Content Include="img\arm-up-right.png" />
+    <Content Include="img\eyes.png" />
+    <Content Include="img\face.png" />
+    <Content Include="ProfAddChapters.aspx" />
+    <Content Include="ProfAddQuestion.aspx" />
+    <Content Include="ProfEditChapters.aspx" />
+    <Content Include="ProfEditQuestion.aspx" />
+    <Content Include="ProfExamStructure.aspx" />
+    <Content Include="ProfLogin.aspx" />
+    <Content Include="ProfRegister.aspx" />
+    <Content Include="ProfShowResult.aspx" />
+    <Content Include="StayApprof.aspx" />
+    <Content Include="StudentChoseExam.aspx" />
+    <Content Include="StudentExam.aspx" />
+    <Content Include="StudentHome.aspx" />
+    <Content Include="StudentLogin.aspx" />
+    <Content Include="StudentRegster.aspx" />
+    <Content Include="StudentResult.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddDepartment.aspx.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.aspx.designer.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddLevel.aspx.cs">
+      <DependentUpon>AddLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddLevel.aspx.designer.cs">
+      <DependentUpon>AddLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSubject.aspx.cs">
+      <DependentUpon>AddSubject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSubject.aspx.designer.cs">
+      <DependentUpon>AddSubject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmProf.aspx.cs">
+      <DependentUpon>confirmProf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmProf.aspx.designer.cs">
+      <DependentUpon>confirmProf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmStudent.aspx.cs">
+      <DependentUpon>confirmStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmStudent.aspx.designer.cs">
+      <DependentUpon>confirmStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditDepartment.aspx.cs">
+      <DependentUpon>EditDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditDepartment.aspx.designer.cs">
+      <DependentUpon>EditDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editProf.aspx.cs">
+      <DependentUpon>editProf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editProf.aspx.designer.cs">
+      <DependentUpon>editProf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProffesor.aspx.cs">
+      <DependentUpon>EditProffesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProffesor.aspx.designer.cs">
+      <DependentUpon>EditProffesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditStudent.aspx.cs">
+      <DependentUpon>EditStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStudent.aspx.designer.cs">
+      <DependentUpon>EditStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditSubject.aspx.cs">
+      <DependentUpon>EditSubject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditSubject.aspx.designer.cs">
+      <DependentUpon>EditSubject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>examDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="examDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="examDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>examDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfAddChapters.aspx.cs">
+      <DependentUpon>ProfAddChapters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfAddChapters.aspx.designer.cs">
+      <DependentUpon>ProfAddChapters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfAddQuestion.aspx.cs">
+      <DependentUpon>ProfAddQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfAddQuestion.aspx.designer.cs">
+      <DependentUpon>ProfAddQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfEditChapters.aspx.cs">
+      <DependentUpon>ProfEditChapters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfEditChapters.aspx.designer.cs">
+      <DependentUpon>ProfEditChapters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfEditQuestion.aspx.cs">
+      <DependentUpon>ProfEditQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfEditQuestion.aspx.designer.cs">
+      <DependentUpon>ProfEditQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfExamStructure.aspx.cs">
+      <DependentUpon>ProfExamStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfExamStructure.aspx.designer.cs">
+      <DependentUpon>ProfExamStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfLogin.aspx.cs">
+      <DependentUpon>ProfLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfLogin.aspx.designer.cs">
+      <DependentUpon>ProfLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfRegister.aspx.cs">
+      <DependentUpon>ProfRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfRegister.aspx.designer.cs">
+      <DependentUpon>ProfRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfShowResult.aspx.cs">
+      <DependentUpon>ProfShowResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfShowResult.aspx.designer.cs">
+      <DependentUpon>ProfShowResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StayApprof.aspx.cs">
+      <DependentUpon>StayApprof.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StayApprof.aspx.designer.cs">
+      <DependentUpon>StayApprof.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentChoseExam.aspx.cs">
+      <DependentUpon>StudentChoseExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentChoseExam.aspx.designer.cs">
+      <DependentUpon>StudentChoseExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentExam.aspx.cs">
+      <DependentUpon>StudentExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentExam.aspx.designer.cs">
+      <DependentUpon>StudentExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentHome.aspx.cs">
+      <DependentUpon>StudentHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentHome.aspx.designer.cs">
+      <DependentUpon>StudentHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentLogin.aspx.cs">
+      <DependentUpon>StudentLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentLogin.aspx.designer.cs">
+      <DependentUpon>StudentLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRegster.aspx.cs">
+      <DependentUpon>StudentRegster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentRegster.aspx.designer.cs">
+      <DependentUpon>StudentRegster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentResult.aspx.cs">
+      <DependentUpon>StudentResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentResult.aspx.designer.cs">
+      <DependentUpon>StudentResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Admin.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Answer.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_chapter.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_department.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_ExamStructure.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Level.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Prof.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Question.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Result.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Student.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Subject.cs">
+      <DependentUpon>examDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="examDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>examDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="examDB.edmx.diagram">
+      <DependentUpon>examDB.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53635</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53635/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

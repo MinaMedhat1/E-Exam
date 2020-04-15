@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="Exam_System_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+  <EntityType Name="Tbl_Admin">
+    <Key>
+      <PropertyRef Name="Admin_ID" />
+    </Key>
+    <Property Name="Admin_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Password" Nullable="false" MaxLength="50" Type="varchar" />
+  </EntityType>
+  <EntityType Name="Tbl_Answer">
+    <Key>
+      <PropertyRef Name="Answer_ID" />
+    </Key>
+    <Property Name="Answer_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Answer_Ar" Nullable="false" Type="varchar(max)" />
+    <Property Name="Answer_En" Nullable="false" Type="varchar(max)" />
+    <Property Name="Correct_Answer" Nullable="false" Type="varchar(max)" />
+    <Property Name="Question_ID" Nullable="false" Type="int" />
+    <Property Name="Count" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_chapter">
+    <Key>
+      <PropertyRef Name="Chapter_ID" />
+    </Key>
+    <Property Name="Chapter_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name_Ar" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Name_En" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Subject_ID" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_department">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Department_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name_Ar" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Name_En" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Level_ID" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_ExamStructure">
+    <Key>
+      <PropertyRef Name="Exam_ID" />
+    </Key>
+    <Property Name="Exam_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Num_Ques_Mcq_A" Nullable="false" Type="int" />
+    <Property Name="Num_Ques_Mcq_B" Nullable="false" Type="int" />
+    <Property Name="Num_Ques_Mcq_C" Nullable="false" Type="int" />
+    <Property Name="Num_Ques_TF_A" Nullable="false" Type="int" />
+    <Property Name="Num_Ques_TF_B" Nullable="false" Type="int" />
+    <Property Name="Num_Ques_TF_C" Nullable="false" Type="int" />
+    <Property Name="Chapter_ID" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Level">
+    <Key>
+      <PropertyRef Name="Level_ID" />
+    </Key>
+    <Property Name="Level_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name_Ar" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Name_Er" Nullable="false" MaxLength="50" Type="varchar" />
+  </EntityType>
+  <EntityType Name="Tbl_Prof">
+    <Key>
+      <PropertyRef Name="Prof_ID" />
+    </Key>
+    <Property Name="Prof_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Password" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Email" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Approval" MaxLength="50" Type="varchar" />
+  </EntityType>
+  <EntityType Name="Tbl_Question">
+    <Key>
+      <PropertyRef Name="Question_ID" />
+    </Key>
+    <Property Name="Question_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Question_Ar" Nullable="false" Type="varchar(max)" />
+    <Property Name="Question_En" Nullable="false" Type="varchar(max)" />
+    <Property Name="Chapter_ID" Nullable="false" Type="int" />
+    <Property Name="Time" Nullable="false" Type="int" />
+    <Property Name="Type" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Question_Level" MaxLength="50" Type="varchar" />
+  </EntityType>
+  <EntityType Name="Tbl_Result">
+    <Key>
+      <PropertyRef Name="Result_ID" />
+    </Key>
+    <Property Name="Result_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Student_ID" Nullable="false" Type="int" />
+    <Property Name="Result" Nullable="false" Type="int" />
+    <Property Name="Subject_ID" Nullable="false" Type="int" />
+    <Property Name="Chapter_ID" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Student">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+    </Key>
+    <Property Name="Student_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Password" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Email" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Level_ID" Nullable="false" Type="int" />
+    <Property Name="Department_ID" Nullable="false" Type="int" />
+    <Property Name="Approval" MaxLength="50" Type="varchar" />
+  </EntityType>
+  <EntityType Name="Tbl_Subject">
+    <Key>
+      <PropertyRef Name="Subject_ID" />
+    </Key>
+    <Property Name="Subject_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name_Ar" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Name_Er" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Department_ID" Nullable="false" Type="int" />
+    <Property Name="Prof_ID" Nullable="false" Type="int" />
+  </EntityType>
+  <Association Name="FK_Tbl_Answer_Tbl_Question">
+    <End Type="Self.Tbl_Question" Multiplicity="1" Role="Tbl_Question" />
+    <End Type="Self.Tbl_Answer" Multiplicity="*" Role="Tbl_Answer" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Question">
+        <PropertyRef Name="Question_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Answer">
+        <PropertyRef Name="Question_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_chapter_Tbl_Subject">
+    <End Type="Self.Tbl_Subject" Multiplicity="1" Role="Tbl_Subject" />
+    <End Type="Self.Tbl_chapter" Multiplicity="*" Role="Tbl_chapter" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Subject">
+        <PropertyRef Name="Subject_ID" />
+      </Principal>
+      <Dependent Role="Tbl_chapter">
+        <PropertyRef Name="Subject_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_department_Tbl_Level">
+    <End Type="Self.Tbl_Level" Multiplicity="1" Role="Tbl_Level" />
+    <End Type="Self.Tbl_department" Multiplicity="*" Role="Tbl_department" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Level">
+        <PropertyRef Name="Level_ID" />
+      </Principal>
+      <Dependent Role="Tbl_department">
+        <PropertyRef Name="Level_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExamStructure_Tbl_chapter">
+    <End Type="Self.Tbl_chapter" Multiplicity="1" Role="Tbl_chapter" />
+    <End Type="Self.Tbl_ExamStructure" Multiplicity="*" Role="Tbl_ExamStructure" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_chapter">
+        <PropertyRef Name="Chapter_ID" />
+      </Principal>
+      <Dependent Role="Tbl_ExamStructure">
+        <PropertyRef Name="Chapter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Question_Tbl_chapter">
+    <End Type="Self.Tbl_chapter" Multiplicity="1" Role="Tbl_chapter" />
+    <End Type="Self.Tbl_Question" Multiplicity="*" Role="Tbl_Question" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_chapter">
+        <PropertyRef Name="Chapter_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Question">
+        <PropertyRef Name="Chapter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subject_Tbl_department">
+    <End Type="Self.Tbl_department" Multiplicity="1" Role="Tbl_department" />
+    <End Type="Self.Tbl_Subject" Multiplicity="*" Role="Tbl_Subject" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_department">
+        <PropertyRef Name="Department_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subject">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subject_Tbl_Prof">
+    <End Type="Self.Tbl_Prof" Multiplicity="1" Role="Tbl_Prof" />
+    <End Type="Self.Tbl_Subject" Multiplicity="*" Role="Tbl_Subject" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Prof">
+        <PropertyRef Name="Prof_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subject">
+        <PropertyRef Name="Prof_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Exam_System_DBModelStoreContainer">
+    <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Answer" EntityType="Self.Tbl_Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_chapter" EntityType="Self.Tbl_chapter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_department" EntityType="Self.Tbl_department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_ExamStructure" EntityType="Self.Tbl_ExamStructure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Level" EntityType="Self.Tbl_Level" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Prof" EntityType="Self.Tbl_Prof" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Question" EntityType="Self.Tbl_Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Result" EntityType="Self.Tbl_Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Student" EntityType="Self.Tbl_Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Subject" EntityType="Self.Tbl_Subject" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Tbl_Answer_Tbl_Question" Association="Self.FK_Tbl_Answer_Tbl_Question">
+      <End EntitySet="Tbl_Question" Role="Tbl_Question" />
+      <End EntitySet="Tbl_Answer" Role="Tbl_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_chapter_Tbl_Subject" Association="Self.FK_Tbl_chapter_Tbl_Subject">
+      <End EntitySet="Tbl_Subject" Role="Tbl_Subject" />
+      <End EntitySet="Tbl_chapter" Role="Tbl_chapter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_department_Tbl_Level" Association="Self.FK_Tbl_department_Tbl_Level">
+      <End EntitySet="Tbl_Level" Role="Tbl_Level" />
+      <End EntitySet="Tbl_department" Role="Tbl_department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExamStructure_Tbl_chapter" Association="Self.FK_Tbl_ExamStructure_Tbl_chapter">
+      <End EntitySet="Tbl_chapter" Role="Tbl_chapter" />
+      <End EntitySet="Tbl_ExamStructure" Role="Tbl_ExamStructure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Question_Tbl_chapter" Association="Self.FK_Tbl_Question_Tbl_chapter">
+      <End EntitySet="Tbl_chapter" Role="Tbl_chapter" />
+      <End EntitySet="Tbl_Question" Role="Tbl_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subject_Tbl_department" Association="Self.FK_Tbl_Subject_Tbl_department">
+      <End EntitySet="Tbl_department" Role="Tbl_department" />
+      <End EntitySet="Tbl_Subject" Role="Tbl_Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subject_Tbl_Prof" Association="Self.FK_Tbl_Subject_Tbl_Prof">
+      <End EntitySet="Tbl_Prof" Role="Tbl_Prof" />
+      <End EntitySet="Tbl_Subject" Role="Tbl_Subject" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,316 @@
+﻿body {
+	background: #eee;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.login-form {
+	position: relative;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 0;
+	margin: 200px auto 0;
+	width: 400px;
+}
+
+.form-wrapper {
+	padding: 30px;
+}
+
+.field-wrapper {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.field-wrapper:last-of-type {
+	margin-bottom: 0;
+}
+
+.field-wrapper label {
+	position: absolute;
+	top: 12px;
+	left: 10px;
+	color: rgba(0, 0, 0, .3);
+    width: 10px;
+    height: 16px;
+}
+.pass
+{
+	padding: 9px 6px 9px 40px;
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #555;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	outline: none;
+}
+.field-wrapper input[type="text"],
+.field-wrapper input[type="email"],
+.field-wrapper input[type="password"] {
+	padding: 9px 6px 9px 40px;
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #555;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	outline: none;
+}
+
+.form-actions {
+	border-top: 1px solid #e4e4e4;
+	background-color: #f7f7f7;
+	padding: 15px 30px;
+	text-align: right;
+}
+
+.form-actions a {
+	text-decoration: none;
+	color: #bbb;
+	padding: 6px 12px 6px 0;
+	font-size: 14px;
+}
+
+.form-actions a:first-of-type {
+	float: left;
+}
+
+.login-form .btn {
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: 4px;
+	color: #fff;
+	background: #428bca;
+	border: 1px solid #357ebd;
+}
+.myButton {
+	background-color:#458fc7;
+	border-radius:28px;
+	border:1px solid #3b19ab;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #05eff7;
+}
+.myButton:hover {
+	background-color:#2abda4;
+}
+
+
+#owl-login1 { 
+	width: 116px;
+	height: 92px;
+	background-image: url(../img/face.png);
+	position: absolute;
+	top: -82px;
+	left: 50%;
+	margin-left: -58px;
+}
+
+    #owl-login1 .eyes1 {
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/eyes.png);
+        opacity: 0;
+        transition: 0.1s ease-out 0s;
+    }
+
+    #owl-login1 .arm-up-right1 {
+        width: 51px;
+        height: 41px;
+        position: absolute;
+        bottom: 11px;
+        right: 5px;
+        transform: translateX(57px) scale(.8);
+        transform-origin: 0 40px;
+        transition: background-position 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s linear;
+        background-image: url(../img/arm-up-right.png);
+        /*background-image: url(../img/eyes.png);*/
+        opacity: 0;
+    }
+
+#owl-login1 .arm-up-left1 {
+	width: 52px;
+	height: 41px;
+	position: absolute;
+	bottom: 11px;
+	left: -3px;
+	transform: translateX(-34px) scale(.8);
+	transform-origin: 0 40px;
+	transition: background-position 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s linear;
+	background: url(../img/arm-up-left.png) no-repeat 0 25px;
+	opacity: 0;
+}
+
+#owl-login1 .arm-down-left1 {
+	width: 43px;
+	height: 25px;
+	background: url(../img/arm-down-left.png);
+	position: absolute;
+	bottom: 2px;
+	left: -34px;
+	transition: 0.3s ease-out;
+}
+
+#owl-login1 .arm-down-right1 {
+	width: 43px;
+	height: 26px;
+	background: url(../img/arm-down-right.png);
+	position: absolute;
+	bottom: 1px;
+	right: -40px;
+	transition: all 0.3s ease-in-out;
+}
+
+#owl-login1.password .arm-up-left1,
+#owl-login1.password .arm-up-right1 {
+	opacity: 1;
+	transform: scale(1);
+	background-position: 0 0;
+}
+
+#owl-login1.password .arm-down-left1 {
+	opacity: 0;
+	transform: translateX(10px) scale(0) translateY(-10px);
+}
+
+#owl-login1.password .arm-down-right1 {
+	opacity: 0;
+	transform: translateX(12px) scale(0) translateY(-8px);
+}
+
+.label
+ { color: #B4886B; font-weight: bold; display: block; } 
+.label:after { content: ": " }
+.container{
+    display: none;
+}
+
+
+
+.select-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+    font-size: 18px;
+    color: #60666d;
+}
+
+.outer{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+.inner-left{
+      width: 76%;
+      height: 100%;
+      right:0%;
+      position: absolute;
+      background: green;
+    top: 45px;
+}
+.inner-Right1 {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    /*background-color: #f8f9fa;*/
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Head{
+    width:100%;
+    height: 10%;
+    background-image: url('1.jpg');
+    
+    position:relative;
+    opacity: 0.3;
+    top: 5px;
+    left: 0px;
+}
+.inner1 {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+    /*opacity:0.5;*/
+    left:15%;
+    top: 15%;
+    position: absolute;
+    text-align: center;
+    text-decoration-style: solid;
+    height: 70%;
+    width: 70%;
+    font-size: larger;
+    display: none;
+}
+.inner {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+    /*opacity:0.5;*/
+    left: 15%;
+    top: 15%;
+    position: absolute;
+    text-align: center;
+    text-decoration-style: solid;
+    height: 70%;
+    width: 70%;
+    font-size: larger;
+}
+.innertest{
+        background-color:white;
+        opacity:0.5;
+        left:15%;
+        top:15%;
+        position:absolute;
+        text-align:center;
+        text-decoration-style:solid;
+        height: 70%;
+         width:70%;
+       font-size:larger;
+       
+}
+
+.mydropdownlist
+{
+color: black;
+width:300px;
+font-size: 16px;
+padding: 5px 10px;
+border-radius: 5px;
+background-color: white;
+font-weight: bold;
+}
+
+.bt
+{
+    background-color:transparent;
+    border:none;
+    color:white;
+}

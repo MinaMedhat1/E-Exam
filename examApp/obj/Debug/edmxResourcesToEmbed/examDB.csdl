@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Exam_System_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tbl_Admin">
+    <Key>
+      <PropertyRef Name="Admin_ID" />
+    </Key>
+    <Property Name="Admin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Answer">
+    <Key>
+      <PropertyRef Name="Answer_ID" />
+    </Key>
+    <Property Name="Answer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Answer_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Answer_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Correct_Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Question_ID" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_Question" Relationship="Self.FK_Tbl_Answer_Tbl_Question" FromRole="Tbl_Answer" ToRole="Tbl_Question" />
+  </EntityType>
+  <EntityType Name="Tbl_chapter">
+    <Key>
+      <PropertyRef Name="Chapter_ID" />
+    </Key>
+    <Property Name="Chapter_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name_En" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Subject_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_Subject" Relationship="Self.FK_Tbl_chapter_Tbl_Subject" FromRole="Tbl_chapter" ToRole="Tbl_Subject" />
+    <NavigationProperty Name="Tbl_Question" Relationship="Self.FK_Tbl_Question_Tbl_chapter" FromRole="Tbl_chapter" ToRole="Tbl_Question" />
+    <NavigationProperty Name="Tbl_ExamStructure" Relationship="Exam_System_DBModel.FK_Tbl_ExamStructure_Tbl_chapter" FromRole="Tbl_chapter" ToRole="Tbl_ExamStructure" />
+  </EntityType>
+  <EntityType Name="Tbl_department">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Department_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name_En" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Level_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_Level" Relationship="Self.FK_Tbl_department_Tbl_Level" FromRole="Tbl_department" ToRole="Tbl_Level" />
+    <NavigationProperty Name="Tbl_Subject" Relationship="Self.FK_Tbl_Subject_Tbl_department" FromRole="Tbl_department" ToRole="Tbl_Subject" />
+  </EntityType>
+  <EntityType Name="Tbl_Level">
+    <Key>
+      <PropertyRef Name="Level_ID" />
+    </Key>
+    <Property Name="Level_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name_Er" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Tbl_department" Relationship="Self.FK_Tbl_department_Tbl_Level" FromRole="Tbl_Level" ToRole="Tbl_department" />
+  </EntityType>
+  <EntityType Name="Tbl_Prof">
+    <Key>
+      <PropertyRef Name="Prof_ID" />
+    </Key>
+    <Property Name="Prof_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Approval" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tbl_Subject" Relationship="Self.FK_Tbl_Subject_Tbl_Prof" FromRole="Tbl_Prof" ToRole="Tbl_Subject" />
+  </EntityType>
+  <EntityType Name="Tbl_Question">
+    <Key>
+      <PropertyRef Name="Question_ID" />
+    </Key>
+    <Property Name="Question_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Question_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Chapter_ID" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Question_Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tbl_Answer" Relationship="Self.FK_Tbl_Answer_Tbl_Question" FromRole="Tbl_Question" ToRole="Tbl_Answer" />
+    <NavigationProperty Name="Tbl_chapter" Relationship="Self.FK_Tbl_Question_Tbl_chapter" FromRole="Tbl_Question" ToRole="Tbl_chapter" />
+  </EntityType>
+  <EntityType Name="Tbl_Result">
+    <Key>
+      <PropertyRef Name="Result_ID" />
+    </Key>
+    <Property Name="Result_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="Student_ID" Nullable="false" Type="Int32" />
+    <Property Name="Result" Nullable="false" Type="Int32" />
+    <Property Name="Subject_ID" Nullable="false" Type="Int32" />
+    <Property Name="Chapter_ID" Nullable="false" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tbl_Student">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Level_ID" Type="Int32" Nullable="false" />
+    <Property Name="Department_ID" Type="Int32" Nullable="false" />
+    <Property Name="Approval" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Subject">
+    <Key>
+      <PropertyRef Name="Subject_ID" />
+    </Key>
+    <Property Name="Subject_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name_Er" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Department_ID" Type="Int32" Nullable="false" />
+    <Property Name="Prof_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_chapter" Relationship="Self.FK_Tbl_chapter_Tbl_Subject" FromRole="Tbl_Subject" ToRole="Tbl_chapter" />
+    <NavigationProperty Name="Tbl_department" Relationship="Self.FK_Tbl_Subject_Tbl_department" FromRole="Tbl_Subject" ToRole="Tbl_department" />
+    <NavigationProperty Name="Tbl_Prof" Relationship="Self.FK_Tbl_Subject_Tbl_Prof" FromRole="Tbl_Subject" ToRole="Tbl_Prof" />
+  </EntityType>
+  <Association Name="FK_Tbl_Answer_Tbl_Question">
+    <End Role="Tbl_Question" Type="Self.Tbl_Question" Multiplicity="1" />
+    <End Role="Tbl_Answer" Type="Self.Tbl_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Question">
+        <PropertyRef Name="Question_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Answer">
+        <PropertyRef Name="Question_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_chapter_Tbl_Subject">
+    <End Role="Tbl_Subject" Type="Self.Tbl_Subject" Multiplicity="1" />
+    <End Role="Tbl_chapter" Type="Self.Tbl_chapter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Subject">
+        <PropertyRef Name="Subject_ID" />
+      </Principal>
+      <Dependent Role="Tbl_chapter">
+        <PropertyRef Name="Subject_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Question_Tbl_chapter">
+    <End Role="Tbl_chapter" Type="Self.Tbl_chapter" Multiplicity="1" />
+    <End Role="Tbl_Question" Type="Self.Tbl_Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_chapter">
+        <PropertyRef Name="Chapter_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Question">
+        <PropertyRef Name="Chapter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_department_Tbl_Level">
+    <End Role="Tbl_Level" Type="Self.Tbl_Level" Multiplicity="1" />
+    <End Role="Tbl_department" Type="Self.Tbl_department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Level">
+        <PropertyRef Name="Level_ID" />
+      </Principal>
+      <Dependent Role="Tbl_department">
+        <PropertyRef Name="Level_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subject_Tbl_department">
+    <End Role="Tbl_department" Type="Self.Tbl_department" Multiplicity="1" />
+    <End Role="Tbl_Subject" Type="Self.Tbl_Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_department">
+        <PropertyRef Name="Department_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subject">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subject_Tbl_Prof">
+    <End Role="Tbl_Prof" Type="Self.Tbl_Prof" Multiplicity="1" />
+    <End Role="Tbl_Subject" Type="Self.Tbl_Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Prof">
+        <PropertyRef Name="Prof_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subject">
+        <PropertyRef Name="Prof_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Exam_System_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
+    <EntitySet Name="Tbl_Answer" EntityType="Self.Tbl_Answer" />
+    <EntitySet Name="Tbl_chapter" EntityType="Self.Tbl_chapter" />
+    <EntitySet Name="Tbl_department" EntityType="Self.Tbl_department" />
+    <EntitySet Name="Tbl_Level" EntityType="Self.Tbl_Level" />
+    <EntitySet Name="Tbl_Prof" EntityType="Self.Tbl_Prof" />
+    <EntitySet Name="Tbl_Question" EntityType="Self.Tbl_Question" />
+    <EntitySet Name="Tbl_Result" EntityType="Self.Tbl_Result" />
+    <EntitySet Name="Tbl_Student" EntityType="Self.Tbl_Student" />
+    <EntitySet Name="Tbl_Subject" EntityType="Self.Tbl_Subject" />
+    <AssociationSet Name="FK_Tbl_Answer_Tbl_Question" Association="Self.FK_Tbl_Answer_Tbl_Question">
+      <End Role="Tbl_Question" EntitySet="Tbl_Question" />
+      <End Role="Tbl_Answer" EntitySet="Tbl_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_chapter_Tbl_Subject" Association="Self.FK_Tbl_chapter_Tbl_Subject">
+      <End Role="Tbl_Subject" EntitySet="Tbl_Subject" />
+      <End Role="Tbl_chapter" EntitySet="Tbl_chapter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Question_Tbl_chapter" Association="Self.FK_Tbl_Question_Tbl_chapter">
+      <End Role="Tbl_chapter" EntitySet="Tbl_chapter" />
+      <End Role="Tbl_Question" EntitySet="Tbl_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_department_Tbl_Level" Association="Self.FK_Tbl_department_Tbl_Level">
+      <End Role="Tbl_Level" EntitySet="Tbl_Level" />
+      <End Role="Tbl_department" EntitySet="Tbl_department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subject_Tbl_department" Association="Self.FK_Tbl_Subject_Tbl_department">
+      <End Role="Tbl_department" EntitySet="Tbl_department" />
+      <End Role="Tbl_Subject" EntitySet="Tbl_Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subject_Tbl_Prof" Association="Self.FK_Tbl_Subject_Tbl_Prof">
+      <End Role="Tbl_Prof" EntitySet="Tbl_Prof" />
+      <End Role="Tbl_Subject" EntitySet="Tbl_Subject" />
+    </AssociationSet>
+    <EntitySet Name="Tbl_ExamStructure" EntityType="Exam_System_DBModel.Tbl_ExamStructure" />
+    <AssociationSet Name="FK_Tbl_ExamStructure_Tbl_chapter" Association="Exam_System_DBModel.FK_Tbl_ExamStructure_Tbl_chapter">
+      <End Role="Tbl_chapter" EntitySet="Tbl_chapter" />
+      <End Role="Tbl_ExamStructure" EntitySet="Tbl_ExamStructure" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tbl_ExamStructure">
+    <Key>
+      <PropertyRef Name="Exam_ID" />
+    </Key>
+    <Property Name="Exam_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Num_Ques_Mcq_A" Type="Int32" Nullable="false" />
+    <Property Name="Num_Ques_Mcq_B" Type="Int32" Nullable="false" />
+    <Property Name="Num_Ques_Mcq_C" Type="Int32" Nullable="false" />
+    <Property Name="Num_Ques_TF_A" Type="Int32" Nullable="false" />
+    <Property Name="Num_Ques_TF_B" Type="Int32" Nullable="false" />
+    <Property Name="Num_Ques_TF_C" Type="Int32" Nullable="false" />
+    <Property Name="Chapter_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_chapter" Relationship="Exam_System_DBModel.FK_Tbl_ExamStructure_Tbl_chapter" FromRole="Tbl_ExamStructure" ToRole="Tbl_chapter" />
+  </EntityType>
+  <Association Name="FK_Tbl_ExamStructure_Tbl_chapter">
+    <End Type="Exam_System_DBModel.Tbl_chapter" Role="Tbl_chapter" Multiplicity="1" />
+    <End Type="Exam_System_DBModel.Tbl_ExamStructure" Role="Tbl_ExamStructure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_chapter">
+        <PropertyRef Name="Chapter_ID" />
+      </Principal>
+      <Dependent Role="Tbl_ExamStructure">
+        <PropertyRef Name="Chapter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
